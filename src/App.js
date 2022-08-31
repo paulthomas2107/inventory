@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Info></Info>
+      <AddItem></AddItem>
     </div>
+  );
+}
+
+function Info() {
+  const title = "This is my title.";
+  const showTitle = true;
+
+  return (
+    <div>
+      <h1>{showTitle ? title : "No Title"}</h1>
+      <p>Manage your stuff.</p>
+    </div>
+  );
+}
+
+function AddItem() {
+  const value = "default";
+
+  return (
+    <form>
+      <label for="text-form">Type something...</label>
+      <input type="text" value={value} id="text-form"></input>
+    </form>
   );
 }
 
